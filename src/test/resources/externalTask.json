@@ -1,0 +1,427 @@
+{
+  "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+  "activityInstanceId": "02d1bb22-294b-11ef-af0b-5a2fb1db8197",
+  "businessKey": "GaianWorkflows",
+  "errorDetails": null,
+  "errorMessage": null,
+  "executionId": "02d1bb21-294b-11ef-af0b-5a2fb1db8197",
+  "id": "02d1e235-294b-11ef-af0b-5a2fb1db8197",
+  "lockExpirationTime": "Jun 13, 2024, 11:36:55 AM",
+  "priority": 0,
+  "processDefinitionId": "GaianWorkflows2173:3:55806042-294a-11ef-af0b-5a2fb1db8197",
+  "processDefinitionKey": "GaianWorkflows2173",
+  "processDefinitionVersionTag": null,
+  "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+  "receivedVariableMap": {
+    "$_INPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a": {
+      "cachedValue": {
+        "interfacePath": "Pi_Api#children#GET/v1.0/schema/schemaId",
+        "interfaceType": "REST",
+        "activityID": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+        "communicationType": "SYNC",
+        "config_status": true,
+        "componentId": "66543bad65eb912f1f49c38a",
+        "productMasterConfigId": "66543bad65eb912f1f49c389",
+        "items": {
+          "HTTP_METHOD": {
+            "config_status": true,
+            "type": "PROPERTY",
+            "value": "#HTTP-METHOD",
+            "items": null
+          },
+          "URL": {
+            "type": "STATIC",
+            "value": "https://ig.aidtaas.com/pi-entity-service/v1.0/schemas/{schemaId}",
+            "items": null,
+            "config_status": true
+          },
+          "QUERY_PARAM": {
+            "config_status": false
+          },
+          "HTTP_HEADERS": {
+            "config_status": true,
+            "type": "GROUP",
+            "value": "#HTTP-HEADERS#children",
+            "items": {
+              "Accept": {
+                "type": "PROPERTY",
+                "value": "#Accept",
+                "label": "Accept"
+              }
+            }
+          },
+          "HTTP_PAYLOAD": {
+            "config_status": false
+          },
+          "PATH_PARAMETERS": {
+            "config_status": true,
+            "type": "GROUP",
+            "value": "#PATH-PARAMETERS#children",
+            "items": {
+              "schemaId": {
+                "type": "STATIC",
+                "value": "66697cbfdbe6a53aaf0fa8a5"
+              }
+            }
+          }
+        },
+        "customItems": {
+          "PATH_PARAMETERS": [
+            {
+              "name": "schemaId",
+              "isStatic": true,
+              "type": "STATIC",
+              "staticValue": "66697cbfdbe6a53aaf0fa8a5",
+              "child": [
+                {
+                  "label": "Global Variables",
+                  "items": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isTransient": false,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_INPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a",
+      "typedValueField": {
+        "type": "string",
+        "value": {
+          "interfacePath": "Pi_Api#children#GET/v1.0/schema/schemaId",
+          "interfaceType": "REST",
+          "activityID": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+          "communicationType": "SYNC",
+          "config_status": true,
+          "componentId": "66543bad65eb912f1f49c38a",
+          "productMasterConfigId": "66543bad65eb912f1f49c389",
+          "items": {
+            "HTTP_METHOD": {
+              "config_status": true,
+              "type": "PROPERTY",
+              "value": "#HTTP-METHOD",
+              "items": null
+            },
+            "URL": {
+              "type": "STATIC",
+              "value": "https://ig.aidtaas.com/pi-entity-service/v1.0/schemas/{schemaId}",
+              "items": null,
+              "config_status": true
+            },
+            "QUERY_PARAM": {
+              "config_status": false
+            },
+            "HTTP_HEADERS": {
+              "config_status": true,
+              "type": "GROUP",
+              "value": "#HTTP-HEADERS#children",
+              "items": {
+                "Accept": {
+                  "type": "PROPERTY",
+                  "value": "#Accept",
+                  "label": "Accept"
+                }
+              }
+            },
+            "HTTP_PAYLOAD": {
+              "config_status": false
+            },
+            "PATH_PARAMETERS": {
+              "config_status": true,
+              "type": "GROUP",
+              "value": "#PATH-PARAMETERS#children",
+              "items": {
+                "schemaId": {
+                  "type": "STATIC",
+                  "value": "66697cbfdbe6a53aaf0fa8a5"
+                }
+              }
+            }
+          },
+          "customItems": {
+            "PATH_PARAMETERS": [
+              {
+                "name": "schemaId",
+                "isStatic": true,
+                "type": "STATIC",
+                "staticValue": "66697cbfdbe6a53aaf0fa8a5",
+                "child": [
+                  {
+                    "label": "Global Variables",
+                    "items": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "valueInfo": {}
+      }
+    },
+    "$_REQUESTER_TYPE": {
+      "cachedValue": null,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_REQUESTER_TYPE",
+      "typedValueField": {
+        "type": "string",
+        "value": "TENANT",
+        "valueInfo": {}
+      }
+    },
+    "$_WORKFLOW_ID": {
+      "cachedValue": null,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_WORKFLOW_ID",
+      "typedValueField": {
+        "type": "string",
+        "value": "2173",
+        "valueInfo": {}
+      }
+    },
+    "$_ENVIRONMENT": {
+      "cachedValue": {
+        "value": "TEST",
+        "type": "PrimitiveValueType[string]"
+      },
+      "isTransient": false,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_ENVIRONMENT",
+      "typedValueField": {
+        "type": "string",
+        "value": "TEST",
+        "valueInfo": {}
+      }
+    },
+    "$_TENANT_ID": {
+      "cachedValue": {
+        "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+        "type": "PrimitiveValueType[string]"
+      },
+      "isTransient": false,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_TENANT_ID",
+      "typedValueField": {
+        "type": "string",
+        "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+        "valueInfo": {}
+      }
+    },
+    "variable": {
+      "cachedValue": null,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "variable",
+      "typedValueField": {
+        "type": "string",
+        "value": "test",
+        "valueInfo": {}
+      }
+    },
+    "tenantId": {
+      "cachedValue": null,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "tenantId",
+      "typedValueField": {
+        "type": "string",
+        "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+        "valueInfo": {}
+      }
+    },
+    "$_OUTPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a": {
+      "cachedValue": {
+        "value": {
+          "configs": {
+            "RESPONSE_HEADERS": "HTTP-HEADERS",
+            "RESPONSE_BODY": "RESPONSE-BODY"
+          },
+          "outputs": {
+            "res": {
+              "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+              "property": "_$",
+              "parent": "200#children#application/json#children#_$"
+            }
+          }
+        },
+        "type": "PrimitiveValueType[string]"
+      },
+      "isTransient": false,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_OUTPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a",
+      "typedValueField": {
+        "type": "string",
+        "value": {
+          "configs": {
+            "RESPONSE_HEADERS": "HTTP-HEADERS",
+            "RESPONSE_BODY": "RESPONSE-BODY"
+          },
+          "outputs": {
+            "res": {
+              "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+              "property": "_$",
+              "parent": "200#children#application/json#children#_$"
+            }
+          }
+        },
+        "valueInfo": {}
+      }
+    },
+    "$_REQUESTER_ID": {
+      "cachedValue": null,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_REQUESTER_ID",
+      "typedValueField": {
+        "type": "string",
+        "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+        "valueInfo": {}
+      }
+    },
+    "$_AUTHORIZATION": {
+      "cachedValue": {
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InEtMjNmYWxldlpoaEQzaG05Q1Fia1A1TVF5VSJ9.eyJhdWQiOiI0ZTIzNDE5MC05YzFhLTRiMDgtYTkwYy1iNzVmMjAwNGY3ZGQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiL3YyLjAiLCJpYXQiOjE3MTIzMjI1ODcsIm5iZiI6MTcxMjMyMjU4NywiZXhwIjoxNzEyMzY2MDg3LCJuYW1lIjoicHJvZCB1c2VyMSIsIm9pZCI6IjFkYWIyODliLWU2ZTItNDJhYS1hYTk1LWUwMDgwOWEyNjliOCIsInByZWZlcnJlZF91c2VybmFtZSI6ImFhZGl0eWEua2FuZHVfZ2FpYW5zb2x1dGlvbnMuY29tQGdhaWF0di5pbiIsInJoIjoiMC5BU29BRFpIY3o5QTFRVXVsdkc1d2U2cDl1NUJCSTA0YW5BaExxUXkzWHlBRTk5MHFBRjAuIiwicm9sZXMiOlsiVklOQ0lfVVNFUiIsIkhPTEFDUkFDWV9VU0VSIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9VU0VSIiwiQk9MVFpNQU5OX0JPVF9VU0VSIiwiTU9ORVRfVVNFUiJdLCJzdWIiOiJxZnpmQk1UVmIyWHdabzNOck9jUkx2dmUzSXhRSUtrdGU0bUhSNjJGaU9FIiwidGlkIjoiY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiIiwidXRpIjoidTdLNVZrc2VIRXVmcGYwRjhlMC1BQSIsInZlciI6IjIuMCIsInRlbmFudElkIjoiMWRhYjI4OWItZTZlMi00MmFhLWFhOTUtZTAwODA5YTI2OWI4In0.hcRx3KkMt9dDgp6QQcHrt3MxNX1wXEDqwLTVNmf36A6_Z5dEIKNEku7Oaqz_XQqH87ckmA4Vt-UBczeVvSaOXriRt8Kltyjb03F1pZLi1alI9kT7YAY1JWUG-bQ_6EWiGtpJy7alKNWk6Z3bZfplLZbyGV7CaqXNPWZ-4uTocknAZZSZGzz7KmthddwARp3BhOsnJ9WaddTH7hDjuZNhdrLFOVAykIUPt5ZUQJ5EHlXUmU9pXyFgaonHhwXU37bm6Jvai4Gf6Iu0haRMuRYlITEPNQNnF1BsfxJvwIlo43LQsKvtZQnWuJ0jf46khWbIEiGMIAJmJwiG-lJVNHGSAA",
+        "type": "PrimitiveValueType[string]"
+      },
+      "isTransient": false,
+      "processInstanceId": "02cfe656-294b-11ef-af0b-5a2fb1db8197",
+      "variableName": "$_AUTHORIZATION",
+      "typedValueField": {
+        "type": "string",
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InEtMjNmYWxldlpoaEQzaG05Q1Fia1A1TVF5VSJ9.eyJhdWQiOiI0ZTIzNDE5MC05YzFhLTRiMDgtYTkwYy1iNzVmMjAwNGY3ZGQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiL3YyLjAiLCJpYXQiOjE3MTIzMjI1ODcsIm5iZiI6MTcxMjMyMjU4NywiZXhwIjoxNzEyMzY2MDg3LCJuYW1lIjoicHJvZCB1c2VyMSIsIm9pZCI6IjFkYWIyODliLWU2ZTItNDJhYS1hYTk1LWUwMDgwOWEyNjliOCIsInByZWZlcnJlZF91c2VybmFtZSI6ImFhZGl0eWEua2FuZHVfZ2FpYW5zb2x1dGlvbnMuY29tQGdhaWF0di5pbiIsInJoIjoiMC5BU29BRFpIY3o5QTFRVXVsdkc1d2U2cDl1NUJCSTA0YW5BaExxUXkzWHlBRTk5MHFBRjAuIiwicm9sZXMiOlsiVklOQ0lfVVNFUiIsIkhPTEFDUkFDWV9VU0VSIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9VU0VSIiwiQk9MVFpNQU5OX0JPVF9VU0VSIiwiTU9ORVRfVVNFUiJdLCJzdWIiOiJxZnpmQk1UVmIyWHdabzNOck9jUkx2dmUzSXhRSUtrdGU0bUhSNjJGaU9FIiwidGlkIjoiY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiIiwidXRpIjoidTdLNVZrc2VIRXVmcGYwRjhlMC1BQSIsInZlciI6IjIuMCIsInRlbmFudElkIjoiMWRhYjI4OWItZTZlMi00MmFhLWFhOTUtZTAwODA5YTI2OWI4In0.hcRx3KkMt9dDgp6QQcHrt3MxNX1wXEDqwLTVNmf36A6_Z5dEIKNEku7Oaqz_XQqH87ckmA4Vt-UBczeVvSaOXriRt8Kltyjb03F1pZLi1alI9kT7YAY1JWUG-bQ_6EWiGtpJy7alKNWk6Z3bZfplLZbyGV7CaqXNPWZ-4uTocknAZZSZGzz7KmthddwARp3BhOsnJ9WaddTH7hDjuZNhdrLFOVAykIUPt5ZUQJ5EHlXUmU9pXyFgaonHhwXU37bm6Jvai4Gf6Iu0haRMuRYlITEPNQNnF1BsfxJvwIlo43LQsKvtZQnWuJ0jf46khWbIEiGMIAJmJwiG-lJVNHGSAA",
+        "valueInfo": {}
+      }
+    }
+  },
+  "retries": null,
+  "tenantId": null,
+  "topicName": "ApiOperationHandler",
+  "variables": {
+    "$_INPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a": {
+      "type": "string",
+      "value": {
+        "interfacePath": "Pi_Api#children#GET/v1.0/schema/schemaId",
+        "interfaceType": "REST",
+        "activityID": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+        "communicationType": "SYNC",
+        "config_status": true,
+        "componentId": "66543bad65eb912f1f49c38a",
+        "productMasterConfigId": "66543bad65eb912f1f49c389",
+        "items": {
+          "HTTP_METHOD": {
+            "config_status": true,
+            "type": "PROPERTY",
+            "value": "#HTTP-METHOD",
+            "items": null
+          },
+          "URL": {
+            "type": "STATIC",
+            "value": "https://ig.aidtaas.com/pi-entity-service/v1.0/schemas/{schemaId}",
+            "items": null,
+            "config_status": true
+          },
+          "QUERY_PARAM": {
+            "config_status": false
+          },
+          "HTTP_HEADERS": {
+            "config_status": true,
+            "type": "GROUP",
+            "value": "#HTTP-HEADERS#children",
+            "items": {
+              "Accept": {
+                "type": "PROPERTY",
+                "value": "#Accept",
+                "label": "Accept"
+              }
+            }
+          },
+          "HTTP_PAYLOAD": {
+            "config_status": false
+          },
+          "PATH_PARAMETERS": {
+            "config_status": true,
+            "type": "GROUP",
+            "value": "#PATH-PARAMETERS#children",
+            "items": {
+              "schemaId": {
+                "type": "STATIC",
+                "value": "66697cbfdbe6a53aaf0fa8a5"
+              }
+            }
+          }
+        },
+        "customItems": {
+          "PATH_PARAMETERS": [
+            {
+              "name": "schemaId",
+              "isStatic": true,
+              "type": "STATIC",
+              "staticValue": "66697cbfdbe6a53aaf0fa8a5",
+              "child": [
+                {
+                  "label": "Global Variables",
+                  "items": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "valueInfo": {}
+    },
+    "$_REQUESTER_TYPE": {
+      "type": "string",
+      "value": "TENANT",
+      "valueInfo": {}
+    },
+    "$_WORKFLOW_ID": {
+      "type": "string",
+      "value": "2173",
+      "valueInfo": {}
+    },
+    "$_ENVIRONMENT": {
+      "type": "string",
+      "value": "TEST",
+      "valueInfo": {}
+    },
+    "$_TENANT_ID": {
+      "type": "string",
+      "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+      "valueInfo": {}
+    },
+    "variable": {
+      "type": "string",
+      "value": "test",
+      "valueInfo": {}
+    },
+    "tenantId": {
+      "type": "string",
+      "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+      "valueInfo": {}
+    },
+    "$_OUTPUTS_Activity_034tx6x_66543bad65eb912f1f49c38a": {
+      "type": "string",
+      "value": {
+        "configs": {
+          "RESPONSE_HEADERS": "HTTP-HEADERS",
+          "RESPONSE_BODY": "RESPONSE-BODY"
+        },
+        "outputs": {
+          "res": {
+            "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+            "property": "_$",
+            "parent": "200#children#application/json#children#_$"
+          }
+        }
+      },
+      "valueInfo": {}
+    },
+    "$_REQUESTER_ID": {
+      "type": "string",
+      "value": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+      "valueInfo": {}
+    },
+    "$_AUTHORIZATION": {
+      "type": "string",
+      "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InEtMjNmYWxldlpoaEQzaG05Q1Fia1A1TVF5VSJ9.eyJhdWQiOiI0ZTIzNDE5MC05YzFhLTRiMDgtYTkwYy1iNzVmMjAwNGY3ZGQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiL3YyLjAiLCJpYXQiOjE3MTIzMjI1ODcsIm5iZiI6MTcxMjMyMjU4NywiZXhwIjoxNzEyMzY2MDg3LCJuYW1lIjoicHJvZCB1c2VyMSIsIm9pZCI6IjFkYWIyODliLWU2ZTItNDJhYS1hYTk1LWUwMDgwOWEyNjliOCIsInByZWZlcnJlZF91c2VybmFtZSI6ImFhZGl0eWEua2FuZHVfZ2FpYW5zb2x1dGlvbnMuY29tQGdhaWF0di5pbiIsInJoIjoiMC5BU29BRFpIY3o5QTFRVXVsdkc1d2U2cDl1NUJCSTA0YW5BaExxUXkzWHlBRTk5MHFBRjAuIiwicm9sZXMiOlsiVklOQ0lfVVNFUiIsIkhPTEFDUkFDWV9VU0VSIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9VU0VSIiwiQk9MVFpNQU5OX0JPVF9VU0VSIiwiTU9ORVRfVVNFUiJdLCJzdWIiOiJxZnpmQk1UVmIyWHdabzNOck9jUkx2dmUzSXhRSUtrdGU0bUhSNjJGaU9FIiwidGlkIjoiY2ZkYzkxMGQtMzVkMC00YjQxLWE1YmMtNmU3MDdiYWE3ZGJiIiwidXRpIjoidTdLNVZrc2VIRXVmcGYwRjhlMC1BQSIsInZlciI6IjIuMCIsInRlbmFudElkIjoiMWRhYjI4OWItZTZlMi00MmFhLWFhOTUtZTAwODA5YTI2OWI4In0.hcRx3KkMt9dDgp6QQcHrt3MxNX1wXEDqwLTVNmf36A6_Z5dEIKNEku7Oaqz_XQqH87ckmA4Vt-UBczeVvSaOXriRt8Kltyjb03F1pZLi1alI9kT7YAY1JWUG-bQ_6EWiGtpJy7alKNWk6Z3bZfplLZbyGV7CaqXNPWZ-4uTocknAZZSZGzz7KmthddwARp3BhOsnJ9WaddTH7hDjuZNhdrLFOVAykIUPt5ZUQJ5EHlXUmU9pXyFgaonHhwXU37bm6Jvai4Gf6Iu0haRMuRYlITEPNQNnF1BsfxJvwIlo43LQsKvtZQnWuJ0jf46khWbIEiGMIAJmJwiG-lJVNHGSAA",
+      "valueInfo": {}
+    }
+  },
+  "workerId": "bob-client"
+}

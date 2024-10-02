@@ -1,0 +1,13 @@
+{
+  "body": {},
+  "headers": {
+    "Accept": "*\/*",
+    "Content-Type": "application\/json"
+  },
+  "httpMethod": "GET",
+  "pathParams": {
+    "schemaId": "66697cbfdbe6a53aaf0fa8a5"
+  },
+  "queryParams": {},
+  "url": "https:\/\/ig.aidtaas.com\/pi-entity-service\/v1.0\/schemas\/{schemaId}"
+}

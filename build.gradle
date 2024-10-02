@@ -1,0 +1,163 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+    id 'org.sonarqube' version '5.0.0.4638'
+    id 'com.google.protobuf' version '0.8.17'
+}
+
+ext {
+    grpcVersion = '1.62.2'
+    protobufVersion = '3.25.3'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/java', 'build/generated/source/proto/main/grpc', 'build/generated/source/proto/main/java'
+        }
+    }
+}
+
+repositories {
+//    maven {
+//        url System.getenv('NEXUS_REPO_URL')
+//        name "nexus"
+//        allowInsecureProtocol = true
+//        credentials {
+//            username = System.getenv('NEXUS_USERNAME')
+//            password = System.getenv('NEXUS_PASSWORD')
+//        }
+//        mavenContent {
+//            releasesOnly()
+//        }
+//    }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+        name "Sonatype Snapshots"
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-arc-deployment'
+    implementation 'io.quarkus:quarkus-resteasy-jackson'
+    implementation 'io.quarkus:quarkus-rest-client'
+    implementation 'io.quarkus:quarkus-rest-client-jackson'
+
+    implementation 'io.quarkus:quarkus-smallrye-health'
+    implementation 'io.quarkus:quarkus-micrometer'
+    implementation 'io.quarkus:quarkus-micrometer-registry-prometheus'
+    testImplementation 'io.quarkus:quarkus-junit5'
+    implementation 'io.projectreactor:reactor-core:3.6.3'
+
+    //test-cases related
+    implementation 'org.mockito:mockito-core'
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'io.quarkus:quarkus-jacoco'
+
+    implementation 'com.jayway.jsonpath:json-path:2.7.0'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // Additional Quarkus extensions you might need
+    implementation 'io.quarkus:quarkus-smallrye-opentracing'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'io.quarkus:quarkus-opentelemetry:${quarkusPlatformVersion}'
+    implementation 'io.quarkus:quarkus-kubernetes'
+    implementation 'io.quarkus:quarkus-kubernetes-config'
+    implementation 'io.quarkus:quarkus-kubernetes-client'
+
+    implementation 'org.camunda.bpm:camunda-external-task-client:7.21.0'
+    implementation 'org.camunda.bpm.quarkus:camunda-bpm-quarkus-engine:7.21.0'
+    implementation 'org.camunda.bpm:camunda-engine-rest:7.21.0'
+    implementation 'org.camunda.bpm:camunda-engine-rest-openapi:7.21.0'
+    implementation 'org.camunda.bpm.webapp:camunda-webapp:7.21.0'
+    implementation 'org.camunda.spin:camunda-spin-dataformat-all:1.22.0'
+    implementation 'org.camunda.spin:camunda-spin-dataformat-all:latest.release'
+
+    implementation "org.graalvm.js:js:23.0.2"
+    implementation "org.graalvm.js:js-scriptengine:23.0.2"
+
+    implementation 'javax.cache:cache-api:1.1.1'
+    implementation 'org.redisson:redisson-quarkus-30:3.31.0'
+
+    implementation 'io.netty:netty-all:4.1.108.Final'
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.1'
+
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'com.jcraft:jsch:0.1.55'
+    implementation 'com.google.api-client:google-api-client:1.31.0'
+    implementation 'com.google.cloud:google-cloud-pubsub:1.123.4'
+
+    implementation 'com.aidtaas.mobius:error-spring-lib:5.1.4'
+
+    implementation 'io.grpc:grpc-netty-shaded:${grpcVersion}'
+    implementation 'io.grpc:grpc-protobuf:${grpcVersion}'
+    implementation 'io.grpc:grpc-stub:${grpcVersion}'
+    implementation 'com.google.protobuf:protobuf-java:${protobufVersion}'
+    implementation 'com.google.protobuf:protobuf-java-util:3.7.1'
+    implementation 'io.quarkus:quarkus-smallrye-reactive-messaging-kafka'
+    implementation 'io.quarkiverse.vault:quarkus-vault:4.1.0'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3.1'
+
+    implementation 'io.quarkus:quarkus-hibernate-orm-rest-data-panache'
+    implementation 'io.quarkus:quarkus-hibernate-validator'
+    implementation 'io.quarkus:quarkus-jdbc-h2'
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
+    implementation 'io.quarkus:quarkus-resteasy-multipart'
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
+    implementation 'org.eclipse.microprofile.rest.client:microprofile-rest-client-api:3.0.1'
+
+    implementation 'org.json:json:20231013'
+    implementation 'io.jsonwebtoken:jjwt:0.12.5'
+    implementation 'com.auth0:java-jwt:4.4.0'
+
+    implementation 'org.brotli:dec:0.1.2'
+    implementation 'net.java.dev.jna:jna:5.14.0'
+}
+
+group 'com.aidtaas.mobius.unit'
+version '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+    dependsOn 'generateProto'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}

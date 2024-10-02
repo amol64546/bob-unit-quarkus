@@ -1,0 +1,72 @@
+{
+  "type": "string",
+  "value": {
+    "interfacePath": "Pi_Api#children#GET/v1.0/schema/schemaId",
+    "interfaceType": "REST",
+    "activityID": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+    "communicationType": "SYNC",
+    "config_status": true,
+    "componentId": "66543bad65eb912f1f49c38a",
+    "productMasterConfigId": "66543bad65eb912f1f49c389",
+    "items": {
+      "HTTP_METHOD": {
+        "config_status": true,
+        "type": "PROPERTY",
+        "value": "#HTTP-METHOD",
+        "items": null
+      },
+      "URL": {
+        "type": "STATIC",
+        "value": "https://ig.aidtaas.com/pi-entity-service/v1.0/schemas/{schemaId}",
+        "items": null,
+        "config_status": true
+      },
+      "QUERY_PARAM": {
+        "config_status": false
+      },
+      "HTTP_HEADERS": {
+        "config_status": true,
+        "type": "GROUP",
+        "value": "#HTTP-HEADERS#children",
+        "items": {
+          "Accept": {
+            "type": "PROPERTY",
+            "value": "#Accept",
+            "label": "Accept"
+          }
+        }
+      },
+      "HTTP_PAYLOAD": {
+        "config_status": false
+      },
+      "PATH_PARAMETERS": {
+        "config_status": true,
+        "type": "GROUP",
+        "value": "#PATH-PARAMETERS#children",
+        "items": {
+          "schemaId": {
+            "type": "STATIC",
+            "value": "66697cbfdbe6a53aaf0fa8a5"
+          }
+        }
+      }
+    },
+    "customItems": {
+      "PATH_PARAMETERS": [
+        {
+          "name": "schemaId",
+          "isStatic": true,
+          "type": "STATIC",
+          "staticValue": "66697cbfdbe6a53aaf0fa8a5",
+          "child": [
+            {
+              "label": "Global Variables",
+              "items": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "valueInfo": {}
+}

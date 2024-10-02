@@ -1,0 +1,73 @@
+{
+  "allianceId": null,
+  "body": null,
+  "headers": null,
+  "httpMethod": null,
+  "input": {
+    "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+    "apiPath": "Pi_Api#children#GET\/v1.0\/schema\/schemaId",
+    "apiType": "REST",
+    "componentId": "66543bad65eb912f1f49c38a",
+    "componentName": "ApiOperationHandler",
+    "fields": {
+      "HTTP_HEADERS": {
+        "items": {
+          "Accept": {
+            "label": "Accept",
+            "type": "PROPERTY",
+            "value": "#Accept"
+          }
+        },
+        "type": "GROUP",
+        "value": "#HTTP-HEADERS#children"
+      },
+      "PATH_PARAMETERS": {
+        "items": {
+          "schemaId": {
+            "label": null,
+            "type": "STATIC",
+            "value": "66697cbfdbe6a53aaf0fa8a5"
+          }
+        },
+        "type": "GROUP",
+        "value": "#PATH-PARAMETERS#children"
+      },
+      "HTTP_METHOD": {
+        "items": null,
+        "type": "PROPERTY",
+        "value": "#HTTP-METHOD"
+      },
+      "URL": {
+        "items": null,
+        "type": "STATIC",
+        "value": "https:\/\/ig.aidtaas.com\/pi-entity-service\/v1.0\/schemas\/{schemaId}"
+      }
+    },
+    "productMasterConfigId": "66543bad65eb912f1f49c389"
+  },
+  "output": {
+    "items": {
+      "res": {
+        "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+        "parent": "200#children#application\/json#children#_$",
+        "property": "_$"
+      }
+    }
+  },
+  "pathParams": null,
+  "productId": "66543bad65eb912f1f49c38a",
+  "productJson": "com.jayway.jsonpath.internal.JsonContext@21bf4cc7",
+  "productMasterConfigId": "66543bad65eb912f1f49c389",
+  "productName": null,
+  "productOwnerId": null,
+  "productOwnerName": null,
+  "queryParams": null,
+  "url": null,
+  "appId": null,
+  "creatorId": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+  "environment": "TEST",
+  "executorTenantId": "1dab289b-e6e2-42aa-aa95-e00809a269b8",
+  "executorTenantName": null,
+  "executorTenantType": null,
+  "runtimeVariables": {}
+}

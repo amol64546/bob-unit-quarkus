@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.aidtaas.mobius.unit.grpc";
+
+service MeteringService {
+  rpc Grpc (ApiMetering) returns (ServerOutput);
+}
+
+message ApiMetering {
+  string ratePerApi = 1;
+  string ratePerVolume = 2;
+  int64 executedAt = 3;
+  string id = 4;
+  string allianceId = 5;
+  string appId = 6;
+  string tenantId = 7; //Subject
+  string productId = 8;
+  string jobId = 9;
+  string activityId = 10;
+  string activityInstanceId = 11; //ID
+  string mode = 12;
+  string workflowProcessInstanceId = 13;
+  string workflowId = 14;
+  int32 responseStatus = 15;
+  string tenantType = 16;
+  ApiInformation apiInformation = 17;
+  string source = 18; //Source
+  int64 dataSize = 19;
+  string requestType = 20;
+  
+}
+
+message ApiInformation {
+  string apiMethod = 1; //ApiType
+  string apiProduct = 2;
+  string apiBody = 3;
+  string apiResponse = 4;
+  int64 apiResponseContentSize = 5;
+  int64 apiResponseBodySize = 6;
+  int64 apiRequestContentSize = 7;
+  int64 apiRequestBodySize = 8;
+}
+
+message ServerOutput {
+  string response = 1;
+}

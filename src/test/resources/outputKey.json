@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "value": {
+    "configs": {
+      "RESPONSE_HEADERS": "HTTP-HEADERS",
+      "RESPONSE_BODY": "RESPONSE-BODY"
+    },
+    "outputs": {
+      "res": {
+        "activityId": "Activity_034tx6x_66543bad65eb912f1f49c38a",
+        "property": "_$",
+        "parent": "200#children#application/json#children#_$"
+      }
+    }
+  },
+  "valueInfo": {}
+}
