@@ -60,6 +60,9 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+    implementation 'com.aidtaas.mobius:error-spring-lib:5.1.4'
+
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-arc-deployment'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
@@ -92,12 +95,9 @@ dependencies {
     implementation 'io.quarkus:quarkus-kubernetes-client'
 
     implementation 'org.camunda.bpm:camunda-external-task-client:7.21.0'
-    implementation 'org.camunda.bpm.quarkus:camunda-bpm-quarkus-engine:7.21.0'
+    implementation 'org.camunda.bpm:camunda-engine:7.21.0'
     implementation 'org.camunda.bpm:camunda-engine-rest:7.21.0'
-    implementation 'org.camunda.bpm:camunda-engine-rest-openapi:7.21.0'
-    implementation 'org.camunda.bpm.webapp:camunda-webapp:7.21.0'
     implementation 'org.camunda.spin:camunda-spin-dataformat-all:1.22.0'
-    implementation 'org.camunda.spin:camunda-spin-dataformat-all:latest.release'
 
     implementation "org.graalvm.js:js:23.0.2"
     implementation "org.graalvm.js:js-scriptengine:23.0.2"
@@ -112,8 +112,6 @@ dependencies {
     implementation 'com.jcraft:jsch:0.1.55'
     implementation 'com.google.api-client:google-api-client:1.31.0'
     implementation 'com.google.cloud:google-cloud-pubsub:1.123.4'
-
-    implementation 'com.aidtaas.mobius:error-spring-lib:5.1.4'
 
     implementation 'io.grpc:grpc-netty-shaded:${grpcVersion}'
     implementation 'io.grpc:grpc-protobuf:${grpcVersion}'
