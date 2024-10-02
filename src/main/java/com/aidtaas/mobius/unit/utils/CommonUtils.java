@@ -46,6 +46,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hc.core5.http.HttpStatus;
 import org.camunda.bpm.client.task.ExternalTask;
+import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.variable.value.FileValue;
 import org.camunda.bpm.engine.variable.value.TypedValue;
 
@@ -105,6 +106,11 @@ public final class CommonUtils {
    */
   public static String getWorkflowId(ExternalTask execution) {
     String processDefinitionKey = execution.getProcessDefinitionKey();
+    return processDefinitionKey.substring(BobConstants.PROC_DEF_SUBSTRING);
+  }
+
+  public static String getWorkflowId(DelegateExecution execution) {
+    String processDefinitionKey = execution.getProcessDefinitionId();
     return processDefinitionKey.substring(BobConstants.PROC_DEF_SUBSTRING);
   }
 

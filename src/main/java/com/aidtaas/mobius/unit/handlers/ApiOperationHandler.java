@@ -25,7 +25,6 @@ import com.aidtaas.mobius.unit.utils.CommonUtils;
 import com.aidtaas.mobius.unit.utils.MeteringUtils;
 import com.aidtaas.mobius.unit.utils.TfUtils;
 import jakarta.enterprise.context.ApplicationScoped;
-import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.client.task.ExternalTask;
@@ -33,6 +32,8 @@ import org.camunda.bpm.client.task.ExternalTaskHandler;
 import org.camunda.bpm.client.task.ExternalTaskService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+
+import java.util.concurrent.CompletableFuture;
 
 import static com.aidtaas.mobius.unit.constants.BobConstants.AUTHORIZATION_GLOBAL;
 import static com.aidtaas.mobius.unit.constants.BobConstants.REQUESTER_ID_GLOBAL;
@@ -75,18 +76,16 @@ public class ApiOperationHandler implements ExternalTaskHandler, JavaDelegate {
 
     log.info("-------start-------Thread name and id at ApiOperationHandler, {} {}",
       Thread.currentThread().getName(), Thread.currentThread().threadId());
-
     long currentTimeMillisStart = System.currentTimeMillis();
     log.debug("Starting time in milliseconds : {}", currentTimeMillisStart);
 
     String workflowId = CommonUtils.getWorkflowId(externalTask);
-    log.info("*********** BEGIN [{}] - [{}] **************", externalTask.getTopicName(), workflowId);
-
-    var requesterType = RequesterType.valueOf(externalTask.getVariable(REQUESTER_TYPE_GLOBAL));
-    var requesterId = externalTask.getVariable(REQUESTER_ID_GLOBAL).toString();
+    log.info("*********** BEGIN ExternalTaskHandler [{}] - [{}] **************",
+      externalTask.getTopicName(), workflowId);
+    RequesterType requesterType = RequesterType.valueOf(externalTask.getVariable(REQUESTER_TYPE_GLOBAL));
+    String requesterId = externalTask.getVariable(REQUESTER_ID_GLOBAL).toString();
 
     ApiOperation apiOperation = new ApiOperation(externalTask, externalTaskService);
-
     try {
       validator.validateApiOperation(apiOperation);
       if (apiOperation.getInput().getApiType().getValue().equalsIgnoreCase(ApiType.REST.getValue())) {
@@ -97,15 +96,14 @@ public class ApiOperationHandler implements ExternalTaskHandler, JavaDelegate {
       }
 
       long currentTimeMillisEnd = System.currentTimeMillis() - currentTimeMillisStart;
-
       log.info("Time taken by Api Operation Handler : {}", currentTimeMillisEnd);
-
-      log.info("------end--------Thread name and id at ApiOperationHandler, {} {}", Thread.currentThread().getName(),
-        Thread.currentThread().threadId());
-      log.info("################### END [{}] - [{}] #####################", externalTask.getTopicName(),
-        workflowId);
+      log.info("------end--------Thread name and id at ApiOperationHandler, {} {}",
+        Thread.currentThread().getName(), Thread.currentThread().threadId());
 
       externalTaskService.complete(externalTask, apiOperation.getRuntimeVariables());
+
+      log.info("################### END ExternalTaskHandler [{}] - [{}] #####################",
+        externalTask.getTopicName(), workflowId);
 
       CompletableFuture.runAsync(() ->
         actionLogUtil.actionLog(ActionSource.SYSTEM_CONSUMER, ActionType.GET, requesterType, requesterId,
@@ -120,12 +118,12 @@ public class ApiOperationHandler implements ExternalTaskHandler, JavaDelegate {
         apiOperation.getInput().getActivityId()), retryableException.getStatusCode());
 
       int retries = CommonUtils.calculateRetries(externalTask, config.retryCount());
-      long retryTimeout = (long) config.retryDelay() *(config.retryCount()-retries);
+      long retryTimeout = (long) config.retryDelay() * (config.retryCount() - retries);
 
       externalTaskService.handleFailure(externalTask.getId(), "Failed to call the rest api",
         retryableException.getMessage(), retries, retryTimeout, apiOperation.getRuntimeVariables(), null);
 
-      if(retries==0) {
+      if (retries == 0) {
         externalTaskService.handleBpmnError(externalTask, String.valueOf(retryableException.getStatusCode()),
           retryableException.getMessage(), apiOperation.getRuntimeVariables());
       }
@@ -159,10 +157,17 @@ public class ApiOperationHandler implements ExternalTaskHandler, JavaDelegate {
 
   @Override
   public void execute(DelegateExecution delegateExecution) throws Exception {
+    String workflowId = CommonUtils.getWorkflowId(delegateExecution);
+    log.info("*********** BEGIN JavaDelegate [ApiOperationHandler] - [{}] **************", workflowId);
+    var requesterType = RequesterType.valueOf((String) delegateExecution.getVariable(REQUESTER_TYPE_GLOBAL));
+    var requesterId = delegateExecution.getVariable(REQUESTER_ID_GLOBAL).toString();
 
+
+    log.info("################### END JavaDelegate [ApiOperationHandler] - [{}] ###################", workflowId);
   }
 
-  private void constructErrorDetails(ExternalTask externalTask, Exception apiException, ApiOperation apiOperation, RequesterType requesterType, String requesterId) {
+  private void constructErrorDetails(ExternalTask externalTask, Exception apiException,
+                                     ApiOperation apiOperation, RequesterType requesterType, String requesterId) {
 
     log.error("Failed to call rest api || {}", apiException.getMessage(), apiException);
 
