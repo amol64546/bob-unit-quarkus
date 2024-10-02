@@ -1,4 +1,4 @@
-# bob-consumer-quarkus
+# bob-unit-quarkus
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
